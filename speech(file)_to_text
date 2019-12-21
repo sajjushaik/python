@@ -1,0 +1,7 @@
+import speech_recognition as s
+from gtts import gTTS
+r=s.Recognizer()
+au='audiofilename'
+with s.AudioFile(au) as so:
+    a=r.record(so)
+    print(r.recognize_google(a))
