@@ -1,0 +1,13 @@
+import speech_recognition as s
+import webbrowser as wb
+cp='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+r=s.Recognizer()
+with s.Microphone() as so:
+    print("SAY:\n")
+    a=r.listen(so)
+    print("Done")
+    re=r.recognize_google(a)
+    aa=str(re)
+    s='https://www.google.com/search?q='+aa
+    print("searching")
+    wb.get(cp).open(s)
